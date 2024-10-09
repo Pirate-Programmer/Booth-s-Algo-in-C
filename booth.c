@@ -137,9 +137,9 @@ long result(int * A, int * Q, int size)
     for(int i = size - 1,idx = 0; i >= 0; i--,idx++)
     {
         if(Q[i] == 1)
-            result+=(int)pow(2,idx);
+            result+=(long)pow(2,idx);
         if(A[i] == 1)
-            result+=(int)pow(2,idx + size);
+            result+=(long)pow(2,idx + size);
     }
 
     return (flag == 1)?result * -1: result;
