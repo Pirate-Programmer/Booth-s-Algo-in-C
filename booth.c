@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
         return 1;
     if(strspn(argv[1],"0123456789*- ") != strlen(argv[1]))
         return 2;
-
+        printf("Expression: %s\n",argv[1]);
         char * str = (char* )malloc(sizeof(char) * 9);
         sscanf(argv[1],"%s",str);
         int decimal_Q = atoi(str);
@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
         sscanf(argv[1],"%*s %*s %s",str);
         int decimal_M = atoi(str);
 
-        printf("%d %d\n",decimal_Q,decimal_M);
+        //printf("%d %d\n",decimal_Q,decimal_M);
         free(str);
     
     int Q_size = (int)log2(abs(decimal_Q)) + 1;
@@ -57,15 +57,15 @@ int main(int argc, char** argv) {
         count--;
     }
 
-    for(int i = 0; i < size; i++)
-        printf("%d ",A[i]);
-    //printf("");
+    // for(int i = 0; i < size; i++)
+    //     printf("%d ",A[i]);
+    // //printf("");
 
-        for(int i = 0; i < size; i++)
-        printf("%d ",Q[i]);
-    printf("\n");
+    //     for(int i = 0; i < size; i++)
+    //     printf("%d ",Q[i]);
+    // printf("\n");
 
-   printf("\nResult: %ld\n",result(A,Q,size));
+   printf("Result: %ld\n",result(A,Q,size));
     free(Q);
     free(ADD_M);
     free(SUB_M);
